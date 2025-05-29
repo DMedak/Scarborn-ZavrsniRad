@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkb24ik1an1aw"]
+
+[ext_resource type="Script" uid="uid://blu8ul36t055q" path="res://Scenes/GameObjects/Enemies/soldier.gd" id="1_dcxuu"]
+
+[node name="Soldier" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 6
+script = ExtResource("1_dcxuu")

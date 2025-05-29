@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://k0x1apf50pot"]
+
+[ext_resource type="Script" uid="uid://bi3utesc508t8" path="res://Scenes/Manager/weapons_manager.gd" id="1_7ww2n"]
+[ext_resource type="PackedScene" uid="uid://blc7cnbjd6a5a" path="res://Scenes/GameObjects/Weapons/bullet.tscn" id="2_dcewk"]
+
+[node name="Weapons" type="Node2D"]
+script = ExtResource("1_7ww2n")
+bullet_scene = ExtResource("2_dcewk")
+
+[node name="BulletSpawnPointUp" type="Marker2D" parent="."]
+
+[node name="BulletSpawnPointDown" type="Marker2D" parent="."]
+
+[node name="BulletSpawnPointRight" type="Marker2D" parent="."]
+
+[node name="BulletSpawnPointLeft" type="Marker2D" parent="."]
+
+[node name="BulletSpawnPointLeftUp" type="Marker2D" parent="."]
+
+[node name="BulletSpawnPointLeftDown" type="Marker2D" parent="."]
+
+[node name="BulletSpawnPointRightDown" type="Marker2D" parent="."]
+
+[node name="BulletSpawnPointRightUp" type="Marker2D" parent="."]

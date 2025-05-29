@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctq4gkwg5c7ip"]
+
+[ext_resource type="Texture2D" uid="uid://p0mi45su0eav" path="res://Assets/Environment/target_b.png" id="1_obmlv"]
+
+[node name="Crosshair" type="CanvasLayer"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_obmlv")

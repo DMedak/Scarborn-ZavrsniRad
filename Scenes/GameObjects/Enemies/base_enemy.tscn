@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://mmwnnh6jemk3"]
+
+[ext_resource type="Script" uid="uid://dupg0infqg0yp" path="res://Scenes/GameObjects/Enemies/base_enemy.gd" id="1_hpojh"]
+
+[node name="BaseEnemy" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 6
+script = ExtResource("1_hpojh")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bf04x3gkys58r"]
+
+[ext_resource type="Script" uid="uid://drapgv1yj01bm" path="res://Scenes/GameObjects/Consumables/base_consumable.gd" id="1_lrwex"]
+
+[node name="BaseConsumable" type="Node"]
+script = ExtResource("1_lrwex")
