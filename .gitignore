@@ -1,2 +1,6 @@
 # Godot 4+ specific ignores
 .godot/
+
+# Unused assets
+assets/Cabin/AnimatedSprites/
+assets/Cabin/StaticSprites/
