@@ -1,0 +1,111 @@
+[gd_resource type="Theme" load_steps=16 format=3 uid="uid://co0748rc10r3y"]
+
+[ext_resource type="Texture2D" uid="uid://c7bps5bjryqir" path="res://Assets/UI/tilemap_packed_small.png" id="1_t3oq6"]
+[ext_resource type="Texture2D" uid="uid://bb2pc5qd2xk4n" path="res://Assets/UI/tilemap_packed_big.png" id="2_keseg"]
+[ext_resource type="FontFile" uid="uid://b54h6cp7hqw4p" path="res://Assets/UI/Rockboxcond12.ttf" id="3_5u1tl"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ejlxd"]
+texture = ExtResource("1_t3oq6")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+region_rect = Rect2(67, 65, 10, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a67o8"]
+texture = ExtResource("1_t3oq6")
+texture_margin_left = 2.0
+texture_margin_top = 1.0
+texture_margin_right = 2.0
+texture_margin_bottom = 1.0
+region_rect = Rect2(20, 66, 8, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n0q6p"]
+texture = ExtResource("1_t3oq6")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+region_rect = Rect2(99, 65, 10, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rrv3g"]
+texture = ExtResource("1_t3oq6")
+texture_margin_left = 3.0
+texture_margin_top = 2.0
+texture_margin_right = 3.0
+texture_margin_bottom = 2.0
+region_rect = Rect2(35, 65, 10, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x1ofy"]
+texture = ExtResource("1_t3oq6")
+texture_margin_left = 3.0
+texture_margin_top = 2.0
+texture_margin_right = 3.0
+texture_margin_bottom = 2.0
+region_rect = Rect2(99, 65, 10, 14)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u5d07"]
+texture = ExtResource("2_keseg")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+region_rect = Rect2(32, 0, 32, 32)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t3oq6"]
+bg_color = Color(1, 0.45098, 0.4, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_keseg"]
+bg_color = Color(1, 0.45098, 0.4, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_irx6a"]
+texture = ExtResource("2_keseg")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(129, 66, 30, 28)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7iqee"]
+texture = ExtResource("2_keseg")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+region_rect = Rect2(0, 0, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t3rt3"]
+texture = ExtResource("1_t3oq6")
+texture_margin_left = 1.0
+texture_margin_top = 9.0
+texture_margin_right = 1.0
+texture_margin_bottom = 9.0
+region_rect = Rect2(211, 19, 10, 10)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6s88e"]
+texture = ExtResource("1_t3oq6")
+region_rect = Rect2(86, 70, 4, 5)
+
+[resource]
+Button/styles/disabled = SubResource("StyleBoxTexture_ejlxd")
+Button/styles/hover = SubResource("StyleBoxTexture_a67o8")
+Button/styles/hover_pressed = SubResource("StyleBoxTexture_n0q6p")
+Button/styles/normal = SubResource("StyleBoxTexture_rrv3g")
+Button/styles/pressed = SubResource("StyleBoxTexture_x1ofy")
+DefaultPanelContainer/base_type = &"PanelContainer"
+DefaultPanelContainer/styles/panel = SubResource("StyleBoxTexture_u5d07")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_t3oq6")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_keseg")
+Label/fonts/font = ExtResource("3_5u1tl")
+Panel/styles/panel = SubResource("StyleBoxTexture_irx6a")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_7iqee")
+ProgressBar/styles/background = SubResource("StyleBoxTexture_t3rt3")
+ProgressBar/styles/fill = SubResource("StyleBoxTexture_6s88e")

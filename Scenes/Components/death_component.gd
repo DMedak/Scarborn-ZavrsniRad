@@ -2,7 +2,7 @@ extends Node2D
 class_name DeathComponent
 
 @export var health_component: HealthComponent
-@export var sprite: AnimatedSprite2D  # Sprite za efekt umiranja
+@export var sprite: AnimatedSprite2D
 
 func _ready():
 	if health_component:
@@ -18,9 +18,5 @@ func on_died():
 	if entities:
 		get_parent().remove_child(self)
 		entities.add_child(self)
-	
-	# Animacije:
-	# $AnimationPlayer.play("default")  
-	# $HitRandomAudioPlayerComponent.play_random()
 
-	owner.queue_free()  # Brišemo owner nakon smrti
+	owner.queue_free()

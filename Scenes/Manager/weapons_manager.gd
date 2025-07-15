@@ -2,7 +2,7 @@ extends Node2D
 
 
 @export var bullet_scene: PackedScene
-@export var shoot_cooldown: float = 0.2
+@export var shoot_cooldown: float = 0.3
 
 var can_shoot: bool = true
 
@@ -33,7 +33,7 @@ func get_spawn_point(direction: String) -> Vector2:
 	if spawn_node and spawn_node is Node2D:
 		return spawn_node.global_position
 	else:
-		return global_position  # fallback ako nije pronađen
+		return global_position
 
 
 func get_direction_name(direction: Vector2) -> String:

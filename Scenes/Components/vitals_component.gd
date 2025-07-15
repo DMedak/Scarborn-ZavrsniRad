@@ -3,7 +3,7 @@ extends Node
 @export var max_food: float = 100.0
 @export var max_water: float = 100.0
 @export var max_stamina: float = 100.0
-@export var stamina_drain_rate: float = 5  
+@export var stamina_drain_rate: float = 20  
 @export var food_drain_rate: float = 0.3 
 @export var water_drain_rate: float = 0.1 
 @export var health_damage_rate: float = 0.5  
@@ -15,7 +15,7 @@ var water: float = max_water
 var stamina: float = max_stamina
 var is_walking: bool = false
 var is_sprinting: bool = false
-var stamina_recovery_rate: float = 3.0
+var stamina_recovery_rate: float = 5.0
 
 
 func _ready():
@@ -37,7 +37,7 @@ func _decrease_vitals():
 	if stamina < max_stamina:
 		stamina = min(max_stamina, stamina + stamina_recovery_rate)
 
-	print("Food:", food, " | Water:", water, " | Stamina:", stamina)
+	#print("Food:", food, " | Water:", water, " | Stamina:", stamina)
 
 	if food == 0 or water == 0:
 		health_component.damage(health_damage_rate)

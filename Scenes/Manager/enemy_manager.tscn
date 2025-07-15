@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cce8nkgj2uey4"]
+
+[ext_resource type="Script" uid="uid://dyyxpgsy7pnng" path="res://Scenes/Manager/enemy_manager.gd" id="1_kao58"]
+[ext_resource type="PackedScene" uid="uid://dgbamcmn1x36v" path="res://Scenes/GameObjects/Enemies/zombie.tscn" id="2_ftnxu"]
+
+[node name="EnemyManager" type="Node2D"]
+script = ExtResource("1_kao58")
+zombie_scene = ExtResource("2_ftnxu")
+spawn_area = Rect2(-2000, -2000, 4000, 4000)

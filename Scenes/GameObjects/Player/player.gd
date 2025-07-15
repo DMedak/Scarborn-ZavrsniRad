@@ -4,11 +4,20 @@ const SPEED = 200.0
 const SPRINT_SPEED = 300.0
 const CROUCH_SPEED = 100.0
 
-@onready var sprite = $Visuals/AnimatedSprite2D
+
 @onready var weapons = preload("res://Scenes/Manager/weapons_manager.tscn").instantiate()
+@onready var sprite = $Visuals/AnimatedSprite2D
 @onready var health_component = $HealthComponent
 @onready var vitals: Node = $VitalsComponent
 @onready var shoot_anim_timer = $ShootAnimTimer
+@onready var walk_sound: AudioStreamPlayer2D = $WalkSound
+@onready var run_sound: AudioStreamPlayer2D = $RunSound
+@onready var shoot_sound: AudioStreamPlayer2D = $ShootSound
+@onready var health_bar = get_node("%HealthBar")
+@onready var stamina_bar = get_node("%StaminaBar")
+@onready var food_bar = get_node("%FoodBar")
+@onready var water_bar = get_node("%WaterBar")
+
 
 
 var can_shoot := true
@@ -17,16 +26,19 @@ var is_shooting := false
 var last_direction = Vector2.DOWN
 var has_weapon := false
 var wants_to_shoot := false
+var number_colliding_bodies = 0
 
 
 func _ready():
 	add_child(weapons)
+
 
 func _input(event):
 	if event.is_action_pressed("slot1"):
 		has_weapon = true
 	elif event.is_action_pressed("slot3"):
 		has_weapon = false
+
 
 func _unhandled_input(event):
 	if has_weapon:
@@ -44,8 +56,6 @@ func _process(delta):
 		trigger_shoot_animation()
 		wants_to_shoot = false
 
-
-
 	is_aiming = Input.is_action_pressed("aim")
 
 	# Input smjer
@@ -62,6 +72,23 @@ func _process(delta):
 	
 	is_sprinting = Input.is_action_pressed("sprint") and input_direction != Vector2.ZERO
 	vitals.is_sprinting = is_sprinting
+
+
+		# Zvukovi hoda i trčanja
+	if velocity.length() > 0:
+		if is_sprinting:
+			if not run_sound.playing:
+				walk_sound.stop()
+				run_sound.play()
+		else:
+			if not walk_sound.playing:
+				run_sound.stop()
+				walk_sound.play()
+	else:
+		if walk_sound.playing:
+			walk_sound.stop()
+		if run_sound.playing:
+			run_sound.stop()
 
 
 	# Smjer prema mišu
@@ -123,6 +150,12 @@ func _process(delta):
 				sprite.play("idle_gun_" + dir_name)
 		else:
 			sprite.play("idle_" + dir_name)
+	
+	health_bar.value = health_component.current_health 
+	stamina_bar.value = vitals.stamina 
+	food_bar.value = vitals.food 
+	water_bar.value = vitals.water 
+
 
 func get_direction_name(dir: Vector2) -> String:
 	if dir == Vector2.ZERO:
@@ -156,6 +189,7 @@ func get_direction_name(dir: Vector2) -> String:
 func trigger_shoot_animation():
 	is_shooting = true
 	shoot_anim_timer.start()
+	shoot_sound.play()
 
 
 func _on_shoot_anim_timer_timeout():
